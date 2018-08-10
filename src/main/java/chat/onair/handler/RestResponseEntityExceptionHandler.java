@@ -26,8 +26,6 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         String errors = "";
         List<FieldError> fieldErrorList = exception.getErrors().getFieldErrors();
 
-        System.out.println(fieldErrorList.size());
-
         for(int i = 0; i < fieldErrorList.size()-1; ++i){
             errors += fieldErrorList.get(i).getDefaultMessage() + ", ";
         }
