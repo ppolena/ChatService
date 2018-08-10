@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = ''
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    runtime('org.postgresql:postgresql')
+	compile("org.springframework.boot:spring-boot-starter-websocket")
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.yaml:snakeyaml')
+	compile('org.liquibase:liquibase-core')
+	compile('com.google.code.gson:gson:2.8.5')
+	compile("org.webjars:webjars-locator-core")
+	compile("org.webjars:bootstrap:3.3.7")
+	compile("org.webjars:jquery:3.1.0")
+    compile('org.springframework.hateoas:spring-hateoas:0.24.0.RELEASE')
+	compile('org.springframework.data:spring-data-rest-hal-browser:3.0.9.RELEASE')
+    compileOnly('org.projectlombok:lombok:1.18.0')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
